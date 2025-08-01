@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-class BottomsheetExample extends StatelessWidget {
+class ToDoExample extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bottom Sheet"),
-        centerTitle: true,
+        title: Text("ToDo App"),
+        
         backgroundColor: Colors.blueAccent,
       ),
-
+       body: Center(child: Text("No Task Yet!")),
+       
       
       floatingActionButton: FloatingActionButton(
         onPressed: (){
@@ -24,21 +25,22 @@ class BottomsheetExample extends StatelessWidget {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
-                        ),labelText: "username",
+                        ),labelText: "Enter Task",
                       ),
                     ),
                     SizedBox(height: 10,),
-                    TextField(
-                       decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),labelText: "password",
-                      ),
-                    ),
-                    SizedBox(height: 10,),
+                    Row(
+                      children: [
                     ElevatedButton(onPressed: () {
                       Navigator.pop(context);
-                    }, child: Text("submit"))
+                    }, child: Text("Add")),
+                    SizedBox(width: 5),
+                    ElevatedButton(onPressed: () {
+                      Navigator.pop(context);
+                    }, child: Text("cancel")),
+                      ],
+                    ),
+                  
                   ],
                 ),
               ),
